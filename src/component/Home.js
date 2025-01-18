@@ -1,13 +1,11 @@
-const Home = () => {
-  return (
-    <div class="home">
-        <div>
-            <h1>Tancrède Gorand</h1>
-            <p class="subtitle">INGÉNIERIE CRÉATIVE</p>
-        </div>
- 
-    </div>
-  );
+import Home_banner from './Home_banner';
+
+const Home = () =>{
+    return (
+        <Home_banner/>
+    );
 };
 
-export default Home;
+export default Home; 
+
+

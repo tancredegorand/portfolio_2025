@@ -1,12 +1,29 @@
 @import './var'; 
 @import './font'; 
 @import './background'; 
-@import './home'; 
+@import './home_banner'; 
+@import './menu'; 
+@import './footer'; 
 
 
+
+//all
 * {
     margin: 0;
     padding: 0;
     color: $white-color;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+//blur point
+.blur_point{
+    width: 350px;
+    height: 350px;
+    border-radius: 500px;
+    filter: blur(100px);
+    opacity: 0.7;
 }
 

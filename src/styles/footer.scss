@@ -1,0 +1,22 @@
+.footer {
+    .mail_box{
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $white-color;
+        height: 65vh;
+        margin: $padding;
+
+        p {
+            font-family: $font-sans-serif;
+        }
+        .mail{
+            margin-top: $space;
+            font-family: $font-serif;
+            font-size: 2rem;
+        }
+    
+    }
+}
