@@ -29,7 +29,7 @@
     #orange_blur_point{
             background-color: $orange-color;
             position:absolute;
-            top: -150px;
+            top: -100px;
             right: -200px;
 
     }
@@ -37,7 +37,7 @@
     #blue_blur_point{
             background-color: $blue2-color;
             position:absolute;
-            bottom: 0;
+            bottom: 100px;
             left: -250px;
     }
 
@@ -49,8 +49,10 @@
     }
 
     #arrowHome{
-        position: relative;
-        top: 350px;
+        position: absolute;
+        right: 40px;
+        bottom: 60px;
+     
     }
 
 }

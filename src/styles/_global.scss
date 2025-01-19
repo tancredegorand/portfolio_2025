@@ -4,6 +4,7 @@
 @import './home_banner'; 
 @import './menu'; 
 @import './footer'; 
+@import './about.scss';
 
 
 
@@ -14,6 +15,8 @@
     color: $white-color;
     text-decoration: none;
     list-style: none;
+    border: none;
+    background: none;
 }
 
 
@@ -25,5 +28,26 @@
     border-radius: 500px;
     filter: blur(100px);
     opacity: 0.7;
+}
+
+
+//btn
+button{
+    display: flex;
+    align-items: center;
+    span{
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: orange;
+        border-radius: 10px;
+    }
+    p {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    img{
+        width: 10px;
+    }
 }
 

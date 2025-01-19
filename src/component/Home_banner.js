@@ -1,7 +1,7 @@
 import w_plane from '../svg/w_plane.svg';
 import arrow from '../svg/arrow.svg';
 
-const Home_banner = () => {
+const Home = () => {
   return (
     <div className="home">
         <span className="blur_point" id="orange_blur_point"></span>
@@ -18,4 +18,4 @@ const Home_banner = () => {
   );
 };
 
-export default Home_banner;
+export default Home;

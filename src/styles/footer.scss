@@ -1,22 +1,64 @@
+
 .footer {
-    .mail_box{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #span-space{
+        height: 10vh;
+    }
+    .mail_box_container{
         border-radius: $border-radius;
+        border: 1px solid $white-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%;
+        margin: $padding;
+
+
+    
+        .mail_box{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;  
+
+            p {
+                font-family: $font-sans-serif;
+            }
+    
+            .mail{
+                font-family: $font-serif;
+                font-size: 2rem;
+            }
+    
+            .footer_plane{
+                width: 50px;
+                padding-bottom: 20px;
+            }
+    
+            .footer_btn_section{
+                padding-top: 25px;
+                padding-bottom: 25px;
+                display: flex;
+                width: 50%;
+                justify-content: space-between;
+            }
+        
+        }
+    }
+    .end-footer{
+        height: 10vh;
+        font-family: $font-sans-serif;
+        opacity: 0.7;
+        font-size: 0.7rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid $white-color;
-        height: 65vh;
-        margin: $padding;
-
-        p {
-            font-family: $font-sans-serif;
-        }
-        .mail{
-            margin-top: $space;
-            font-family: $font-serif;
-            font-size: 2rem;
-        }
-    
+        
     }
+    
 }
