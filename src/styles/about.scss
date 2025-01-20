@@ -4,16 +4,17 @@
     justify-content: center;
     flex-direction: column;
     padding: $padding;
-
+    
     p{
-        padding-top: 2*$padding;
         font-family: $font-sans-serif;
         font-size: $body-size;
         line-height: 1.7;
+        margin-top: $padding;
     }
     img{
         width: 300px;
         border-radius: 300px;
         border: solid 3px $white-color;
+        margin-bottom: 2*$padding;
     }
 }

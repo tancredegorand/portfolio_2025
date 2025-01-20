@@ -1,0 +1,66 @@
+.menu_page{
+    overflow: hidden;
+
+
+
+    .carrousel{
+        display: flex;
+    }
+
+    .menu_page_item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span{
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 20px;
+            background-color: $orange-color;
+        }
+
+        p{
+            font-family: $font-serif;
+            font-size: 3rem;
+            padding-left: $padding;
+            padding-right: $padding;
+        }
+    }
+    
+    .split2{
+        display: block;
+        border-radius: 2px;
+        height: 1px;
+        width: 100%;
+        background-color: $white-color;
+        margin: $padding;
+        opacity: 0.7;
+    }
+}
+
+
+.split1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $padding;
+    opacity: 0.7;
+
+    span {
+        flex-grow: 2;
+        border-radius: 2px;
+        display: block;
+        height: 1px;
+        background-color: $white-color;
+    }
+    p{
+        flex-grow: 1;
+        font-family: $font-sans-serif;
+        font-size: 0.8rem;
+        max-width: 200px;
+        text-align: center;
+    }
+
+}
+
+
