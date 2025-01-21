@@ -19,3 +19,26 @@
         margin-bottom: 2*$padding;
     }
 }
+
+
+
+@media (min-width: 1024px) {
+    .about{
+        flex-direction: row;
+        background-color: red;
+
+        div{
+            padding: $padding;
+            padding-left: 5*$padding;
+        }
+
+        img{
+            width: 500px;
+        }
+
+        h2{
+            font-size: 3rem;
+        }
+    }
+
+}
