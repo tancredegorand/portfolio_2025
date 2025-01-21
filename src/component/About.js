@@ -2,7 +2,7 @@ import pp_img from '../img/pp.jpg'
 
 const About = () =>{
     return (
-        <div className="about">
+        <div className="about" id="about">
             <img src={pp_img}/>
             <div>
                 <h2>Lorem ipsum de fou</h2>
