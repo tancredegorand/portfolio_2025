@@ -3,6 +3,12 @@
     padding-left: $padding;
     padding-right: $padding;
 
+    h2{
+        font-family: $font-serif;
+        font-size: 3rem;
+        text-align: center;
+    }
+
     .carrousel{
         display: flex;
         transition: 0.4s;
@@ -73,7 +79,12 @@
 //hover 
 
 .menu_page{
-
+    margin-top: 50px;
+    
+    h2{
+        font-size: 3rem;
+        padding-bottom: $padding;
+    }
     .carrousel:hover{
         transition: 0.4s;
         cursor: pointer;
@@ -87,4 +98,16 @@
     }
 
 
+}
+
+
+
+@media (min-width: 1024px) {
+
+    .menu_page_item{
+        p{
+            font-size: 7rem!important;
+        }
+    }   
+    
 }

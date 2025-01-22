@@ -4,41 +4,97 @@
     justify-content: center;
     flex-direction: column;
     padding: $padding;
-    margin-bottom: 3*$padding;
-    
-    p{
-        font-family: $font-sans-serif;
-        font-size: $body-size;
-        line-height: 1.7;
+    min-height: 90vh;
+
+    .about_text_section{
         margin-top: $padding;
+        margin-bottom: $padding;
+        h2{
+            font-size: 2rem;
+            font-family: $font-sans-serif;
+
+        }
+
+        p{
+            font-family: $font-sans-serif;
+            font-size: $body-size;
+            line-height: 1.7;
+        }
+
+        .personal_infos{
+            display: flex;
+            width: fit-content;
+            flex-direction: column;
+            align-items:start; 
+            padding-top: $padding;
+            padding-bottom: $padding;
+            div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: solid 1px $white-color;
+                padding-top: 0.25*$padding;
+                padding-bottom: 0.25*$padding;
+                padding-right: 0.5*$padding;
+                padding-left: 0.5*$padding;
+                border-radius: 5px;
+                margin-bottom: 0.5*$padding;
+
+                img{
+                    height: 15px;
+                    margin-right: 0.5*$padding;
+                }
+                p{
+                    font-size: $normal-size;
+                }
+            }
+        }
     }
-    img{
+
+    #pp{
         width: 300px;
         border-radius: 300px;
         border: solid 3px $white-color;
-        margin-bottom: 2*$padding;
     }
 }
+
+
 
 
 
 @media (min-width: 1024px) {
     .about{
         flex-direction: row;
-        background-color: red;
-
-        div{
-            padding: $padding;
-            padding-left: 5*$padding;
+        max-width: 1300px;
+        margin-right: auto;
+        margin-left: auto;
+        #pp {
+            width: 400px;
+            margin-right: 2*$padding;
+        }
+        .about_text_section{
+            margin-bottom: 0!important;
+        }
+        div {
+            h2{
+                font-size: 3rem!important;
+            }
+            .personal_infos{
+                justify-content: left!important;
+                flex-direction: row!important;
+                div {
+                    margin-right: $padding;
+                }
+                img{
+                    height: 15px;
+                    margin-right: 0.5*$padding;
+                }
+            }
+            p{
+                font-size: 1.4rem;
+            }
         }
 
-        img{
-            width: 500px;
-        }
-
-        h2{
-            font-size: 3rem;
-        }
     }
 
 }

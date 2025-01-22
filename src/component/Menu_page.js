@@ -55,9 +55,9 @@ const Menu_page = () => {
 
         const handleScroll = () => {
             if (dev_item && son_item && visual_item) {
-                const dev_item_translate = -500 + window.scrollY * 0.05;
-                const son_item_translate = -window.scrollY * 0.05;
-                const visual_item_translate = -400 + window.scrollY * 0.05;
+                const dev_item_translate = -500 + window.scrollY * 0.2;
+                const son_item_translate = -window.scrollY * 0.2;
+                const visual_item_translate = -600 + window.scrollY * 0.2;
 
                 dev_item.style.transform = `translateX(${dev_item_translate}px)`;
                 son_item.style.transform = `translateX(${son_item_translate}px)`;

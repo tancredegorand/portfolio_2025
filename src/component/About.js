@@ -1,13 +1,29 @@
 import pp_img from '../img/pp.jpg'
+import school_svg from '../svg/education.svg'
+import location_svg from '../svg/location.svg'
+import persona from '../svg/persona.svg'
+
 
 const About = () =>{
     return (
         <div className="about" id="about">
-            <img src={pp_img}/>
-            <div>
-                <h2>Lorem ipsum de fou</h2>
-                <p>Passionné par l’IT, l’image et la musique, je suis un étudiant  ingénieur IMAC (Image, Multimédia, Audiovisuel, Communication). Depuis 2020, j’étudie le développement web, l’algorithmie, l’UI/UX design, l’infographie et l’audiovisuel.
-                Au cours de ces années de développement créatif, j’ai eu l’opportunité de travailler sur divers supports, allant des sites web aux jeux, en passant par des installations interactives et des applications.</p>
+            <img id="pp" src={pp_img}/>
+            <div className='about_text_section'>
+            <h2>Lorem ipsum de fou, trop cool la vie j'aime les chocolats !! Lorem ipsum de fou, trop cool la vie j'aime les chocolats !! </h2>
+            <div className='personal_infos'>
+                    <div>
+                        <img src={school_svg}/>
+                        <p>Ingénieur IMAC</p>
+                    </div>
+                    <div>
+                    <img src={persona}/>
+                        <p>22 Ans</p>
+                    </div>
+                    <div>
+                        <img src={location_svg}/>
+                        <p>Paris, France</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
