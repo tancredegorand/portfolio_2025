@@ -27,24 +27,25 @@
     }
 
     #orange_blur_point{
-            background-color: $orange-color;
-            position:absolute;
-            top: -100px;
-            right: -200px;
+        background-color: $orange-color;
+        position:absolute;
+        top: -100px;
+        right: -200px;
 
     }
 
     #blue_blur_point{
-            background-color: $blue2-color;
-            position:absolute;
-            bottom: 100px;
-            left: -250px;
+        background-color: $blue2-color;
+        position:absolute;
+        bottom: 100px;
+        left: -250px;
     }
 
     #planeHome{
         position: fixed;
         left: 10px;
-        top: 10px;
+        top: 80vh;
+        width: 100px;
     }
 
     #arrowHome{
@@ -83,6 +84,14 @@
         font-size: 1.5rem;
     }
 }
+
+.home{
+    #planeHome{
+        width: 150px!important;
+    }
+}
+
+
 
 
 }

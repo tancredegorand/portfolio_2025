@@ -26,8 +26,7 @@ const Footer = () =>{
             </div>
             <div className="end-footer">
                 <p>Mentions légales</p>
-                <p>©2025 Tancrède Gorand</p>
-                
+                <p>©2025 Tancrède Gorand</p>  
             </div>
         </div>
     );

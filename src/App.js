@@ -2,6 +2,7 @@ import logo from './logo.svg';
 //import './App.css';
 import './styles/_global.scss'
 import Home from './component/Home';
+import Mouse from './component/Mouse'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <head>
     </head>
     <body>
+      <Mouse/>
       <Home/>
     </body>
   </html>

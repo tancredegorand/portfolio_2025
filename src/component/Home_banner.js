@@ -6,30 +6,63 @@ const Home = () => {
 
   useEffect(() => {
     const plane = document.getElementById('planeHome');
-    
+
+
     const normaliseScroll = (scrollY) => {
         return scrollY / window.innerHeight;
     };
-
+    
     const calculateXTranslate = (normalizedScroll) => {
         const screenWidth = window.innerWidth;
-        const startPosition = -150;
+        const startPosition = -170;
         const totalDistance = screenWidth + 250;
         return startPosition + (normalizedScroll * totalDistance);
     };
+    
+    const calculateYTranslate = (normalizedScroll) => {
+      let coef = 1.4; 
+      if(window.innerWidth > 900){
+          coef = 1.1
+      }
 
-    const handleScroll = () => {
-        const normalizedScrollPosition = normaliseScroll(window.scrollY);
-        const xPosition = calculateXTranslate(normalizedScrollPosition);  
-        
-        plane.style.transform = `translate(${xPosition}px)`;
+        const screenHeight = window.innerHeight * 0.8; 
+        const baseTranslation = normalizedScroll * screenHeight * coef; 
+        const oscillationAmplitude = 100; 
+        const oscillationFrequency = 3;
+    
+        const oscillation = Math.sin(normalizedScroll * Math.PI * oscillationFrequency) * oscillationAmplitude;
+    
+        return -baseTranslation + oscillation;
     };
 
-    
-    handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleScroll);
+
+
+
+    const calculateRotation = (x, y) => {
+      const baseRotate = 5; 
+
+
+      return baseRotate;
+  };
+
+    
+    
+    const handleScroll = () => {
+        const normalizedScrollPosition = normaliseScroll(window.scrollY);
+        const xPosition = calculateXTranslate(normalizedScrollPosition); 
+        const yPosition = calculateYTranslate(normalizedScrollPosition);
+
+        const rotate = calculateRotation(yPosition); 
+
+
+    
+        plane.style.transform = `translate(${xPosition}px, ${yPosition}px) rotate(${rotate}deg)`;
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+  
 
     return () => {
         window.removeEventListener("scroll", handleScroll);
