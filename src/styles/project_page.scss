@@ -9,6 +9,19 @@
     width: 100vw;
     height: 90vh;
 
+    #orange_blur_point{
+        background-color: $orange-color;
+        top: -100px;
+        right: -200px;
+
+    }
+
+    #blue_blur_point{
+        background-color: $blue2-color;
+        bottom: 100px;
+        left: -250px;
+    }
+
 
     .categories_container{
         display: flex;
@@ -16,6 +29,7 @@
         flex-direction: column;
         margin-left: 2*$padding;
         margin-right: 2*$padding;
+        z-index: 5;
 
         .categories{
             display: flex;
@@ -46,13 +60,10 @@
 
 @media (min-width: 1024px) {
     .bannerTitle{
-    
+        margin-top: 30px;
         .bannerTitleContent{
             p{
                 font-size: 6rem!important;
-            }
-            span {
-
             }
         }
         
@@ -60,6 +71,23 @@
     
     
     .project_banner{
+
+
+        #orange_blur_point{
+            top: -60px;
+            right: 0px;
+            width: 650px;
+            height: 650px;
+    
+        }
+    
+        #blue_blur_point{
+            bottom: 100px;
+            left: 0px;
+            width: 650px;
+            height: 650px;
+        }
+        
         .categories_container{
             margin-left: 5*$padding!important;
             margin-right: 5*$padding!important;
@@ -67,11 +95,24 @@
             .categories{
                 flex-direction: row!important;
                 margin-bottom: 0px!important;
-    
+
+                .category:first-child span {
+                    display: none;
+                }
                 .category{
+                    display: flex;
+                    align-items: center;
                     p{
                         margin-bottom: 0px!important;
-                        margin-right: $padding;
+                        margin-right: 0.5*$padding;
+                        margin-left: 0.5*$padding;
+                    }
+                    span{
+                        display: block;
+                        background-color: $blue-color;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 7px;
                     }
                 }
             }

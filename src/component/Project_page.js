@@ -10,6 +10,7 @@ import arrow from '../svg/arrow.svg';
 const Category = () => {
     return(
         <div className='category'>
+            <span></span>
             <p>Vue.js</p>
         </div>
     ); 
@@ -18,6 +19,10 @@ const Category = () => {
 const ProjectBanner = () => {
     return (
         <div className='project_banner'>
+
+        <span className="blur_point" id="orange_blur_point"></span>
+        <span className="blur_point" id="blue_blur_point"></span>
+
             <div className='titles_page'>
                 <BannerTitle numTranslate="translate1"/>
                 <BannerTitle numTranslate="translate2"/>
