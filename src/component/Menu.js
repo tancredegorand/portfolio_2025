@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 
 
-
-
-
-
-
-
-
 const Menu = () => {
     const [isOpen, setIsOpen] = useState(false);
   
@@ -46,7 +39,7 @@ const Menu = () => {
   
     return (
         <div>
-            <div className="menu menu_hide" id='menu_container'>
+            <div className="menu" id='menu_container'>
                 <div>
                     <a href="#accueil">Accueil</a>
                 </div>

@@ -1,0 +1,33 @@
+{
+  "titre": "Développement",
+  "categories": ["UX/UI Design", "Vue.js", "React"],
+  "projets": [
+    {
+      "titre_projet": "Plateforme E-learning",
+      "description": "Une plateforme d'apprentissage en ligne offrant des cours interactifs avec une interface intuitive.",
+      "url": "https://www.exemple-elearning.com",
+      "images": [
+        "https://www.exemple-elearning.com/image1.jpg",
+        "https://www.exemple-elearning.com/image2.jpg"
+      ]
+    },
+    {
+      "titre_projet": "Application de gestion de tâches",
+      "description": "Une application web permettant de gérer ses tâches quotidiennes avec une interface moderne en Vue.js.",
+      "url": "https://www.exemple-todolist.com",
+      "images": [
+        "https://www.exemple-todolist.com/image1.jpg",
+        "https://www.exemple-todolist.com/image2.jpg"
+      ]
+    },
+    {
+      "titre_projet": "Dashboard analytique",
+      "description": "Un tableau de bord interactif pour analyser des données en temps réel avec React et D3.js.",
+      "url": "https://www.exemple-dashboard.com",
+      "images": [
+        "https://www.exemple-dashboard.com/image1.jpg",
+        "https://www.exemple-dashboard.com/image2.jpg"
+      ]
+    }
+  ]
+}

@@ -6,7 +6,6 @@ const Footer = () =>{
     useEffect(() => {
 
         
-
         const dot = document.getElementById('dot'); 
         const circle = document.getElementById('circle');
 

@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 //import './App.css';
-import './styles/_global.scss'
+import './styles/_global.scss';
 import Home from './component/Home';
-import Mouse from './component/Mouse'
-
+import Mouse from './component/Mouse';
+import Project_page from './component/Project_page';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
     </head>
     <body>
       <Mouse/>
-      <Home/>
+      <Project_page/>
     </body>
   </html>
   );

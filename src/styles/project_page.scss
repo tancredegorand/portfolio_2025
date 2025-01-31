@@ -1,0 +1,111 @@
+
+
+.project_banner{
+    padding-top: 10vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100vw;
+    height: 90vh;
+
+
+    .categories_container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 2*$padding;
+        margin-right: 2*$padding;
+
+        .categories{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin-bottom: 2*$padding;
+
+            .category{
+                p{
+                    font-family: $font-sans-serif;
+                    font-size: 1.3rem;
+                    margin-bottom: 0.5*$padding;
+                }
+            }
+        }
+
+        #arrowHome{
+            animation: bounce 1s infinite; 
+            margin-left: 80vw;
+        }
+    }
+
+
+}
+
+
+
+
+@media (min-width: 1024px) {
+    .bannerTitle{
+    
+        .bannerTitleContent{
+            p{
+                font-size: 6rem!important;
+            }
+            span {
+
+            }
+        }
+        
+    }
+    
+    
+    .project_banner{
+        .categories_container{
+            margin-left: 5*$padding!important;
+            margin-right: 5*$padding!important;
+            flex-direction: row!important;
+            .categories{
+                flex-direction: row!important;
+                margin-bottom: 0px!important;
+    
+                .category{
+                    p{
+                        margin-bottom: 0px!important;
+                        margin-right: $padding;
+                    }
+                }
+            }
+    
+        }
+
+        #arrowHome{ 
+            margin-left: 0!important;
+        }
+    
+    
+    }
+    
+
+}
+
+
+
+
+
+@keyframes translateTitle {
+    0% { 
+        transform: translateX(0%); 
+    }
+    100% { 
+        transform: translateX(-100%); 
+    }
+}
+
+@keyframes translateTitleReverse {
+    0% { 
+        transform: translateX(0%); 
+    }
+    100% { 
+        transform: translateX(100%); 
+    }
+}
