@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Menu = () => {
@@ -50,10 +51,11 @@ const Menu = () => {
             </div>
             <div className='menu_list' id='menu_list'>
                 <ul>
-                    <li>Accueil</li>
+                    <li><Link to="/">Accueil</Link> </li>
                     <li>Développement</li>
                     <li>Son</li>
                     <li>Visuel</li>
+       
                 </ul>
             </div>
         </div>

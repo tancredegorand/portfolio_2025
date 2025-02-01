@@ -1,5 +1,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 import data from '../data/data.json';
 
 const Split1 = () => {
@@ -26,21 +28,18 @@ const Menu_page = () => {
     const [startY, setStartY] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     
-    // Récupérer les sections depuis le JSON
     const sections = data.fr.sections;
     
-    // Création des refs pour chaque carrousel
     const carouselRefs = useRef(sections.map(() => React.createRef()));
     const velocityRefs = useRef(sections.map(() => 0));
 
-    // Observer pour détecter la visibilité du composant `menu_page`
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         setIsVisible(true);
-                        setStartY(window.scrollY); // Sauvegarder la position initiale
+                        setStartY(window.scrollY); 
                     } else {
                         setIsVisible(false);
                     }
@@ -60,12 +59,10 @@ const Menu_page = () => {
         };
     }, []);
 
-    // Fonction pour animer le mouvement des carrousels
     useEffect(() => {
-        if (!isVisible) return; // Si le composant n'est pas visible, ne pas animer
+        if (!isVisible) return; 
 
         let animationFrameId;
-        let lastScrollY = window.scrollY;
 
         const smoothScroll = () => {
             const relativeScrollY = window.scrollY - startY;
@@ -78,19 +75,17 @@ const Menu_page = () => {
 
                 const offset = -500 + (index * 100);
                 
-                // Si l'index est pair, on déplace à gauche, sinon à droite
                 const directionMultiplier = (index % 2 === 0) ? 1 : -1;
 
                 velocityRefs.current[index] += 
                     ((offset + boundedScrollY * 0.2 * directionMultiplier) - parseFloat(carousel.style.transform?.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
 
-                velocityRefs.current[index] *= 0.95; // Réduire la vitesse au fil du temps
+                velocityRefs.current[index] *= 0.95;
                 carousel.style.transform = `translateX(${velocityRefs.current[index]}px)`;
             });
 
-            // Condition pour continuer à animer même avec de petits déplacements
             const hasMovement = velocityRefs.current.some(
-                velocity => Math.abs(velocity) > 0.05 // Valeur plus petite pour permettre un mouvement plus continu
+                velocity => Math.abs(velocity) > 0.05 
             );
 
             if (hasMovement) {
@@ -113,9 +108,7 @@ const Menu_page = () => {
         };
     }, [isVisible, startY, sections]);
 
-    // Gestion de l'opacité lors du survol
     const handleMouseOver = (index) => {
-        // Réduire l'opacité des autres carrousels sauf celui survolé
         carouselRefs.current.forEach((ref, i) => {
             if (ref.current && i !== index) {
                 ref.current.style.opacity = '0.7';
@@ -124,7 +117,6 @@ const Menu_page = () => {
     };
 
     const handleMouseOut = () => {
-        // Réinitialiser l'opacité de tous les carrousels
         carouselRefs.current.forEach(ref => {
             if (ref.current) {
                 ref.current.style.opacity = '1';
@@ -132,7 +124,6 @@ const Menu_page = () => {
         });
     };
 
-    // Ajouter les événements de survol et de sortie pour chaque carrousel
     useEffect(() => {
         carouselRefs.current.forEach((ref, index) => {
             if (ref.current) {
@@ -152,24 +143,35 @@ const Menu_page = () => {
     }, [sections]);
 
     return (
-        <div className="menu_page" ref={menuRef}>
-            <Split1 />
-            {sections.map((section, index) => (
-                <React.Fragment key={section.titre}>
+<div className="menu_page" ref={menuRef}>
+    <Split1 />
+    {sections.map((section, index) => {
+        const path = section.titre
+            .normalize("NFD") // Décompose les caractères accentués
+            .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
+            .replace(/[^a-zA-Z0-9\s]/g, "") // Supprime les caractères spéciaux
+            .replace(/\s+/g, "_") // Remplace les espaces par "_"
+            .toLowerCase(); // Convertit en minuscules
+
+        return (
+            <React.Fragment key={section.titre}>
+                <Link to={`/${path}`}>
                     <div 
                         className="carrousel" 
-                        ref={carouselRefs.current[index]} // Référence assignée
-                        id={section.titre}
+                        ref={carouselRefs.current[index]} 
+                        id={path} // Utilisation de `path` pour éviter les problèmes avec les ID HTML
                     >
                         {Array(12).fill(null).map((_, i) => (
-                            <Menu_page_item key={i} titre={section.titre} />
+                            <Menu_page_item key={i} titre={section.titre}/>
                         ))}
                     </div>
                     {index < sections.length - 1 && <span className="split2" />}
-                </React.Fragment>
-            ))}
-            <Split1 />
-        </div>
+                </Link>
+            </React.Fragment>
+        );
+    })}
+    <Split1 />
+</div>
     );
 };
 
