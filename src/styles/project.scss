@@ -14,6 +14,7 @@
     }
     .project-card-text{
         font-family: $font-sans-serif;
+        line-height: 1.7rem;
     }
     .project-img{
         flex-direction: column;
@@ -31,8 +32,11 @@
         .project-card-text{
             margin-left: $padding;
         }
-        .project-card-title{
-            font-size: 3.5rem;
+        .project-title{
+            h2{
+                font-size: 4rem!important;
+            }
+
         }
     }
 }

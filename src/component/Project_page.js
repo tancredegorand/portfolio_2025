@@ -6,8 +6,7 @@ import Projects from './Projects'
 
 import arrow from '../svg/arrow.svg';
 
-//import data from '../data/data.json';
-
+import data from '../data/data.json'
 
 const Category = () => {
     return(
@@ -26,9 +25,9 @@ const ProjectBanner = () => {
         <span className="blur_point" id="blue_blur_point"></span>
 
             <div className='titles_page'>
-                <BannerTitle numTranslate="translate1"/>
-                <BannerTitle numTranslate="translate2"/>
-                <BannerTitle numTranslate="translate3"/> 
+                <BannerTitle numTranslate="translate1" text={data.fr.sections[0].titre}/>
+                <BannerTitle numTranslate="translate2" text={data.fr.sections[0].titre}/>
+                <BannerTitle numTranslate="translate3" text={data.fr.sections[0].titre}/> 
             </div>
             <div className='categories_container'>
                 <div className='categories'>
@@ -54,7 +53,7 @@ const ProjectBanner = () => {
 
 
 
-const ProjectPage = () => {
+const ProjectPage = ({}) => {
     return (
         <div>
             <Menu />

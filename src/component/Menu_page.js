@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+
+import React, { useRef, useEffect, useState } from "react";
+import data from '../data/data.json';
 
 const Split1 = () => {
     return (
@@ -10,60 +12,41 @@ const Split1 = () => {
     );
 };
 
-const Menu_page_dev_item = () => {
+const Menu_page_item = ({ titre }) => {
     return (
         <div className='menu_page_item'>
             <span></span>
-            <p>Développement</p>
-        </div>
-    );
-};
-
-const Menu_page_son_item = () => {
-    return (
-        <div className='menu_page_item'>
-            <span></span>
-            <p>Son</p>
-        </div>
-    );
-};
-
-const Menu_page_visual_item = () => {
-    return (
-        <div className='menu_page_item'>
-            <span></span>
-            <p>Visuel</p>
+            <p>{titre}</p>
         </div>
     );
 };
 
 const Menu_page = () => {
     const menuRef = useRef(null);
-    const devItemRef = useRef(null);
-    const sonItemRef = useRef(null);
-    const visualItemRef = useRef(null);
-    const [isVisible, setIsVisible] = useState(false);
     const [startY, setStartY] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
     
-    const velocityRefs = {
-        dev: useRef(0),
-        son: useRef(0),
-        visual: useRef(0)
-    };
+    // Récupérer les sections depuis le JSON
+    const sections = data.fr.sections;
+    
+    // Création des refs pour chaque carrousel
+    const carouselRefs = useRef(sections.map(() => React.createRef()));
+    const velocityRefs = useRef(sections.map(() => 0));
 
+    // Observer pour détecter la visibilité du composant `menu_page`
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         setIsVisible(true);
-                        setStartY(window.scrollY);
+                        setStartY(window.scrollY); // Sauvegarder la position initiale
                     } else {
                         setIsVisible(false);
                     }
                 });
             },
-            { threshold: 0.1 } 
+            { threshold: 0.1 }
         );
 
         if (menuRef.current) {
@@ -77,46 +60,42 @@ const Menu_page = () => {
         };
     }, []);
 
+    // Fonction pour animer le mouvement des carrousels
     useEffect(() => {
-        const devItem = devItemRef.current;
-        const sonItem = sonItemRef.current;
-        const visualItem = visualItemRef.current;
+        if (!isVisible) return; // Si le composant n'est pas visible, ne pas animer
 
         let animationFrameId;
         let lastScrollY = window.scrollY;
 
         const smoothScroll = () => {
-            if (!devItem || !sonItem || !visualItem || !isVisible) return;
-
-            // Calculer le scroll relatif depuis le début de la visibilité du composant
             const relativeScrollY = window.scrollY - startY;
-            
-            // Limiter le scroll relatif
-            const maxScroll = 1000; // Valeur maximale de scroll à ajuster selon vos besoins
+            const maxScroll = 1000;
             const boundedScrollY = Math.max(0, Math.min(relativeScrollY, maxScroll));
 
-            // Appliquer les transformations avec le scroll limité
-            velocityRefs.dev.current += ((-500 + boundedScrollY * 0.2) - parseFloat(devItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
-            velocityRefs.son.current += ((-boundedScrollY * 0.2) - parseFloat(sonItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
-            velocityRefs.visual.current += ((-600 + boundedScrollY * 0.2) - parseFloat(visualItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
+            sections.forEach((section, index) => {
+                const carousel = carouselRefs.current[index].current;
+                if (!carousel) return;
 
-            // Appliquer l'amortissement
-            velocityRefs.dev.current *= 0.95;
-            velocityRefs.son.current *= 0.95;
-            velocityRefs.visual.current *= 0.95;
+                const offset = -500 + (index * 100);
+                
+                // Si l'index est pair, on déplace à gauche, sinon à droite
+                const directionMultiplier = (index % 2 === 0) ? 1 : -1;
 
-            // Mettre à jour les transformations
-            devItem.style.transform = `translateX(${velocityRefs.dev.current}px)`;
-            sonItem.style.transform = `translateX(${velocityRefs.son.current}px)`;
-            visualItem.style.transform = `translateX(${velocityRefs.visual.current}px)`;
+                velocityRefs.current[index] += 
+                    ((offset + boundedScrollY * 0.2 * directionMultiplier) - parseFloat(carousel.style.transform?.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
 
-            if (Math.abs(velocityRefs.dev.current) > 0.1 || 
-                Math.abs(velocityRefs.son.current) > 0.1 || 
-                Math.abs(velocityRefs.visual.current) > 0.1) {
+                velocityRefs.current[index] *= 0.95; // Réduire la vitesse au fil du temps
+                carousel.style.transform = `translateX(${velocityRefs.current[index]}px)`;
+            });
+
+            // Condition pour continuer à animer même avec de petits déplacements
+            const hasMovement = velocityRefs.current.some(
+                velocity => Math.abs(velocity) > 0.05 // Valeur plus petite pour permettre un mouvement plus continu
+            );
+
+            if (hasMovement) {
                 animationFrameId = requestAnimationFrame(smoothScroll);
             }
-
-            lastScrollY = window.scrollY;
         };
 
         const startSmoothScroll = () => {
@@ -128,75 +107,71 @@ const Menu_page = () => {
 
         window.addEventListener('scroll', startSmoothScroll);
 
-        // Effet d'opacité au survol
-        const updateOpacity = (target) => {
-            const items = [devItem, sonItem, visualItem].filter(item => item !== target);
-            items.forEach(item => {
-                item.style.opacity = '0.7';
-            });
-        };
-
-        const resetOpacity = () => {
-            [devItem, sonItem, visualItem].forEach(item => {
-                item.style.opacity = '1';
-            });
-        };
-
-        [devItem, sonItem, visualItem].forEach(item => {
-            item.addEventListener('mouseover', () => updateOpacity(item));
-            item.addEventListener('mouseout', resetOpacity);
-        });
-
         return () => {
             window.removeEventListener('scroll', startSmoothScroll);
             cancelAnimationFrame(animationFrameId);
-            [devItem, sonItem, visualItem].forEach(item => {
-                item.removeEventListener('mouseover', () => updateOpacity(item));
-                item.removeEventListener('mouseout', resetOpacity);
+        };
+    }, [isVisible, startY, sections]);
+
+    // Gestion de l'opacité lors du survol
+    const handleMouseOver = (index) => {
+        // Réduire l'opacité des autres carrousels sauf celui survolé
+        carouselRefs.current.forEach((ref, i) => {
+            if (ref.current && i !== index) {
+                ref.current.style.opacity = '0.7';
+            }
+        });
+    };
+
+    const handleMouseOut = () => {
+        // Réinitialiser l'opacité de tous les carrousels
+        carouselRefs.current.forEach(ref => {
+            if (ref.current) {
+                ref.current.style.opacity = '1';
+            }
+        });
+    };
+
+    // Ajouter les événements de survol et de sortie pour chaque carrousel
+    useEffect(() => {
+        carouselRefs.current.forEach((ref, index) => {
+            if (ref.current) {
+                ref.current.addEventListener('mouseover', () => handleMouseOver(index));
+                ref.current.addEventListener('mouseout', handleMouseOut);
+            }
+        });
+
+        return () => {
+            carouselRefs.current.forEach((ref, index) => {
+                if (ref.current) {
+                    ref.current.removeEventListener('mouseover', () => handleMouseOver(index));
+                    ref.current.removeEventListener('mouseout', handleMouseOut);
+                }
             });
         };
-    }, [isVisible, startY]);
+    }, [sections]);
 
     return (
         <div className="menu_page" ref={menuRef}>
             <Split1 />
-            <div className="carrousel" ref={devItemRef} id="dev_item">
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-                <Menu_page_dev_item />
-            </div>
-            <span className="split2"></span>
-            <div className="carrousel" ref={sonItemRef} id="son_item">
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-                <Menu_page_son_item />
-            </div>
-            <span className="split2"></span>
-            <div className="carrousel" ref={visualItemRef} id="visual_item">
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
-            </div>
+            {sections.map((section, index) => (
+                <React.Fragment key={section.titre}>
+                    <div 
+                        className="carrousel" 
+                        ref={carouselRefs.current[index]} // Référence assignée
+                        id={section.titre}
+                    >
+                        {Array(12).fill(null).map((_, i) => (
+                            <Menu_page_item key={i} titre={section.titre} />
+                        ))}
+                    </div>
+                    {index < sections.length - 1 && <span className="split2" />}
+                </React.Fragment>
+            ))}
             <Split1 />
         </div>
     );
 };
 
 export default Menu_page;
+

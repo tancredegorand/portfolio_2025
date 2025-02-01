@@ -8,11 +8,9 @@ const Projects = () => {
                 <div>
                     <p>SPOTIFLOW</p>
                     <p>RUMBLE</p>
-                    <p>SPOTIFLOW</p>
                 </div>
             </div>
             <div class="projects-list">
-                <Project/>
                 <Project/>
                 <Project/>
             </div>

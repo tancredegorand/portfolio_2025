@@ -9,10 +9,10 @@ const Project = () => {
         <div>
             <div className='project-title'>
                 <p>Développement</p>
-                <h2>SPOTIFLOW TEST DE FOU</h2>
+                <h2>SPOTIFLOW</h2>
             </div>
             <p className='project-card-text'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.
             </p>
         </div>
         <a><button>

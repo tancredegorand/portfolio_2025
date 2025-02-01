@@ -37,12 +37,12 @@ const BannerTitleContent = ({ numItem, numTranslate, text }) => {
         </div>
     );
 };
-const BannerTitle = ({numTranslate}) => {
+const BannerTitle = ({numTranslate, text}) => {
     const nbItem = 10; 
     return (
         <div className={`bannerTitle`}>
             {[...Array(nbItem)].map((_, index) => (
-                <BannerTitleContent key={index} numItem={`item${index + 1}`} numTranslate={numTranslate} text="Testesteste" />
+                <BannerTitleContent key={index} numItem={`item${index + 1}`} numTranslate={numTranslate} text={text} />
             ))}
         </div>
     );
