@@ -2,6 +2,7 @@
   "fr": {
     "sections": [
       {
+        "path":"developpement",
         "titre": "Développement",
         "categories": ["UX/UI Design", "Vue.js", "React"],
         "projets": [
@@ -14,6 +15,7 @@
         ]
       },
       {
+        "path":"son",
         "titre": "Son",
         "categories": ["Sound Design", "5.1", "Composition"],
         "projets": [
@@ -26,6 +28,7 @@
         ]
       }, 
       {
+        "path":"visual",
         "titre": "Visual",
         "categories": ["Sound Design", "5.1", "Composition"],
         "projets": [
@@ -36,7 +39,9 @@
             "images": ["1920.jpg"]
           }
         ]
-      },      {
+      }, 
+      {
+        "path":"developpement",
         "titre": "Développement",
         "categories": ["UX/UI Design", "Vue.js", "React"],
         "projets": [

@@ -11,17 +11,9 @@ import Project_page from './component/Project_page';
 
 import data from './data/data.json';
 
-const generateSlug = (title) => {
-  return title
-    .normalize("NFD") // Décompose les caractères accentués
-    .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
-    .replace(/[^a-zA-Z0-9\s]/g, "") // Supprime les caractères spéciaux
-    .replace(/\s+/g, "_") // Remplace les espaces par "_"
-    .toLowerCase(); // Convertit en minuscules
-};
 
 const dynamicRoutes = data.fr.sections.map((section) => ({
-  path: `/${generateSlug(section.titre)}`,
+  path: `/${section.path}`,
   element: <Project_page/>,
 }));
 

@@ -1,3 +1,4 @@
+
 import Menu from './Menu';
 import Footer from './Footer';
 import BannerTitle from './BannerTitle';
@@ -57,7 +58,7 @@ const ProjectPage = ({}) => {
     return (
         <div>
             <Menu />
-            <ProjectBanner />
+            <ProjectBanner/>
             <Projects/>
             <Menu_page/>
             <Footer />

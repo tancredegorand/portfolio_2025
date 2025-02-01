@@ -146,20 +146,13 @@ const Menu_page = () => {
 <div className="menu_page" ref={menuRef}>
     <Split1 />
     {sections.map((section, index) => {
-        const path = section.titre
-            .normalize("NFD") // Décompose les caractères accentués
-            .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
-            .replace(/[^a-zA-Z0-9\s]/g, "") // Supprime les caractères spéciaux
-            .replace(/\s+/g, "_") // Remplace les espaces par "_"
-            .toLowerCase(); // Convertit en minuscules
-
         return (
             <React.Fragment key={section.titre}>
-                <Link to={`/${path}`}>
+                <Link to={`/${section.path}`}>
                     <div 
                         className="carrousel" 
                         ref={carouselRefs.current[index]} 
-                        id={path} // Utilisation de `path` pour éviter les problèmes avec les ID HTML
+                        id={section.path} 
                     >
                         {Array(12).fill(null).map((_, i) => (
                             <Menu_page_item key={i} titre={section.titre}/>
