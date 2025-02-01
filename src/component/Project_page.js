@@ -1,6 +1,8 @@
 import Menu from './Menu';
 import Footer from './Footer';
 import BannerTitle from './BannerTitle';
+import Menu_page from './Menu_page';
+import Projects from './Projects'
 
 import arrow from '../svg/arrow.svg';
 
@@ -36,7 +38,7 @@ const ProjectBanner = () => {
                     <Category/>
                 </div>
                 <div>
-                    <a href="#fr"><img 
+                    <a href="#projects"><img 
                     id="arrowHome" 
                     src={arrow} 
                     alt="scroll down" 
@@ -57,6 +59,8 @@ const ProjectPage = () => {
         <div>
             <Menu />
             <ProjectBanner />
+            <Projects/>
+            <Menu_page/>
             <Footer />
         </div>
     );

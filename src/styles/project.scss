@@ -1,0 +1,38 @@
+.project-card {
+    border: 1px solid $white-color;
+    border-radius: $border-radius;
+    padding: $padding;
+    margin-bottom: $padding;
+
+
+    .project-title{
+        h2{
+            font-size: 3rem;
+            margin-top: $space;
+            margin-bottom: $space;
+        }
+    }
+    .project-card-text{
+        font-family: $font-sans-serif;
+    }
+    .project-img{
+        flex-direction: column;
+        img{
+            border-radius: 15px;
+            width: 100%;
+            margin-top: $padding;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-card > div {
+        display: flex;
+        .project-card-text{
+            margin-left: $padding;
+        }
+        .project-card-title{
+            font-size: 3.5rem;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.projects {
+    padding: $padding;
+
+    .projects-summary {
+        width: 80%; 
+        position: sticky;
+        top: 4 *$padding;
+        height: fit-content; 
+        display: none;
+
+        span {
+            display: block;
+            height: 1px;
+            background-color: $white-color;
+            border-radius: 5px;
+            margin-bottom: 1.5 * $space;
+        }
+        p {
+            margin-bottom: $space;
+        }
+    }
+
+    .projects-list {
+        width: 100%;
+
+        
+    }
+
+}
+
+
+
+@media (min-width: 1024px) {
+    .projects {
+        grid-template-columns: 20vw auto;
+        display: grid;
+        max-width: 100%;
+        .projects-summary {
+            display: block;
+        }
+    }
+}
+

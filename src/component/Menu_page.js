@@ -1,119 +1,168 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
-
-const Split1 = () =>{
+const Split1 = () => {
     return (
-            <div className="split1">
-                <span></span>
-                <p>Cliquez pour découvrir</p>
-                <span></span>
-            </div>
+        <div className="split1">
+            <span></span>
+            <p>Cliquez pour découvrir</p>
+            <span></span>
+        </div>
     );
 };
 
-
-const Menu_page_dev_item = () =>{
+const Menu_page_dev_item = () => {
     return (
         <div className='menu_page_item'>
-        <span></span>
-        <p>Développement</p>
-    </div>
+            <span></span>
+            <p>Développement</p>
+        </div>
     );
-
 };
 
-
-const Menu_page_son_item = () =>{
+const Menu_page_son_item = () => {
     return (
         <div className='menu_page_item'>
-        <span></span>
-        <p>Son</p>
-    </div>
+            <span></span>
+            <p>Son</p>
+        </div>
     );
-
 };
 
-
-const Menu_page_visual_item = () =>{
+const Menu_page_visual_item = () => {
     return (
         <div className='menu_page_item'>
-        <span></span>
-        <p>Visuel</p>
-    </div>
+            <span></span>
+            <p>Visuel</p>
+        </div>
     );
-
 };
-
-
 
 const Menu_page = () => {
+    const menuRef = useRef(null);
+    const devItemRef = useRef(null);
+    const sonItemRef = useRef(null);
+    const visualItemRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+    const [startY, setStartY] = useState(0);
+    
+    const velocityRefs = {
+        dev: useRef(0),
+        son: useRef(0),
+        visual: useRef(0)
+    };
+
     useEffect(() => {
-        const dev_item = document.getElementById("dev_item");
-        const son_item = document.getElementById("son_item");
-        const visual_item = document.getElementById("visual_item");
-
-
-        const handleScroll = () => {
-            if (dev_item && son_item && visual_item) {
-                const dev_item_translate = -500 + window.scrollY * 0.2;
-                const son_item_translate = -window.scrollY * 0.2;
-                const visual_item_translate = -600 + window.scrollY * 0.2;
-
-                dev_item.style.transform = `translateX(${dev_item_translate}px)`;
-                son_item.style.transform = `translateX(${son_item_translate}px)`;
-                visual_item.style.transform = `translateX(${visual_item_translate}px)`;
-            }
-        };
-
-
-        const updateOpacity = (target, opacity) => {
-            if (dev_item && son_item && visual_item) {
-                if (target === dev_item) {
-                    son_item.style.opacity = opacity;
-                    visual_item.style.opacity = opacity;
-                } else if (target === son_item) {
-                    dev_item.style.opacity = opacity;
-                    visual_item.style.opacity = opacity;
-                } else if (target === visual_item) {
-                    dev_item.style.opacity = opacity;
-                    son_item.style.opacity = opacity;
-                }
-            }
-        };
-
-        const addHoverListeners = () => {
-            if (dev_item && son_item && visual_item) {
-                [dev_item, son_item, visual_item].forEach((item) => {
-                    item.addEventListener("mouseover", () => updateOpacity(item, "0.7"));
-                    item.addEventListener("mouseout", () => updateOpacity(item, "1"));
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setIsVisible(true);
+                        setStartY(window.scrollY);
+                    } else {
+                        setIsVisible(false);
+                    }
                 });
-            }
-        };
+            },
+            { threshold: 0.1 } 
+        );
 
-        const removeHoverListeners = () => {
-            if (dev_item && son_item && visual_item) {
-                [dev_item, son_item, visual_item].forEach((item) => {
-                    item.removeEventListener("mouseover", () => updateOpacity(item, "0.7"));
-                    item.removeEventListener("mouseout", () => updateOpacity(item, "1"));
-                });
-            }
-        };
-
-
-        window.addEventListener("scroll", handleScroll);
-        addHoverListeners();
-
+        if (menuRef.current) {
+            observer.observe(menuRef.current);
+        }
 
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-            removeHoverListeners();
+            if (menuRef.current) {
+                observer.unobserve(menuRef.current);
+            }
         };
     }, []);
 
+    useEffect(() => {
+        const devItem = devItemRef.current;
+        const sonItem = sonItemRef.current;
+        const visualItem = visualItemRef.current;
+
+        let animationFrameId;
+        let lastScrollY = window.scrollY;
+
+        const smoothScroll = () => {
+            if (!devItem || !sonItem || !visualItem || !isVisible) return;
+
+            // Calculer le scroll relatif depuis le début de la visibilité du composant
+            const relativeScrollY = window.scrollY - startY;
+            
+            // Limiter le scroll relatif
+            const maxScroll = 1000; // Valeur maximale de scroll à ajuster selon vos besoins
+            const boundedScrollY = Math.max(0, Math.min(relativeScrollY, maxScroll));
+
+            // Appliquer les transformations avec le scroll limité
+            velocityRefs.dev.current += ((-500 + boundedScrollY * 0.2) - parseFloat(devItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
+            velocityRefs.son.current += ((-boundedScrollY * 0.2) - parseFloat(sonItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
+            velocityRefs.visual.current += ((-600 + boundedScrollY * 0.2) - parseFloat(visualItem.style.transform.replace('translateX(', '').replace('px)', '') || 0)) * 0.1;
+
+            // Appliquer l'amortissement
+            velocityRefs.dev.current *= 0.95;
+            velocityRefs.son.current *= 0.95;
+            velocityRefs.visual.current *= 0.95;
+
+            // Mettre à jour les transformations
+            devItem.style.transform = `translateX(${velocityRefs.dev.current}px)`;
+            sonItem.style.transform = `translateX(${velocityRefs.son.current}px)`;
+            visualItem.style.transform = `translateX(${velocityRefs.visual.current}px)`;
+
+            if (Math.abs(velocityRefs.dev.current) > 0.1 || 
+                Math.abs(velocityRefs.son.current) > 0.1 || 
+                Math.abs(velocityRefs.visual.current) > 0.1) {
+                animationFrameId = requestAnimationFrame(smoothScroll);
+            }
+
+            lastScrollY = window.scrollY;
+        };
+
+        const startSmoothScroll = () => {
+            if (isVisible) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = requestAnimationFrame(smoothScroll);
+            }
+        };
+
+        window.addEventListener('scroll', startSmoothScroll);
+
+        // Effet d'opacité au survol
+        const updateOpacity = (target) => {
+            const items = [devItem, sonItem, visualItem].filter(item => item !== target);
+            items.forEach(item => {
+                item.style.opacity = '0.7';
+            });
+        };
+
+        const resetOpacity = () => {
+            [devItem, sonItem, visualItem].forEach(item => {
+                item.style.opacity = '1';
+            });
+        };
+
+        [devItem, sonItem, visualItem].forEach(item => {
+            item.addEventListener('mouseover', () => updateOpacity(item));
+            item.addEventListener('mouseout', resetOpacity);
+        });
+
+        return () => {
+            window.removeEventListener('scroll', startSmoothScroll);
+            cancelAnimationFrame(animationFrameId);
+            [devItem, sonItem, visualItem].forEach(item => {
+                item.removeEventListener('mouseover', () => updateOpacity(item));
+                item.removeEventListener('mouseout', resetOpacity);
+            });
+        };
+    }, [isVisible, startY]);
+
     return (
-        <div className="menu_page">
+        <div className="menu_page" ref={menuRef}>
             <Split1 />
-            <div className="carrousel" id="dev_item">
+            <div className="carrousel" ref={devItemRef} id="dev_item">
+                <Menu_page_dev_item />
+                <Menu_page_dev_item />
                 <Menu_page_dev_item />
                 <Menu_page_dev_item />
                 <Menu_page_dev_item />
@@ -122,9 +171,7 @@ const Menu_page = () => {
                 <Menu_page_dev_item />
             </div>
             <span className="split2"></span>
-            <div className="carrousel" id="son_item">
-                <Menu_page_son_item />
-                <Menu_page_son_item />
+            <div className="carrousel" ref={sonItemRef} id="son_item">
                 <Menu_page_son_item />
                 <Menu_page_son_item />
                 <Menu_page_son_item />
@@ -136,9 +183,7 @@ const Menu_page = () => {
                 <Menu_page_son_item />
             </div>
             <span className="split2"></span>
-            <div className="carrousel" id="visual_item">
-                <Menu_page_visual_item />
-                <Menu_page_visual_item />
+            <div className="carrousel" ref={visualItemRef} id="visual_item">
                 <Menu_page_visual_item />
                 <Menu_page_visual_item />
                 <Menu_page_visual_item />
@@ -155,6 +200,3 @@ const Menu_page = () => {
 };
 
 export default Menu_page;
-
-
-
