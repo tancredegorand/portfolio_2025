@@ -143,7 +143,7 @@ const Menu_page = () => {
     }, [sections]);
 
     return (
-<div className="menu_page" ref={menuRef}>
+<div className="menu_page" id="menu_page" ref={menuRef}>
     <Split1 />
     {sections.map((section, index) => {
         return (

@@ -2,12 +2,13 @@
 //ProjectBanner
 .project_banner{
     padding-top: 10vh;
-    overflow-x: hidden;
+    overflow-x: hidden!important;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100vw;
     height: 90vh;
+    position: relative;
 
     #orange_blur_point{
         background-color: $orange-color;
@@ -42,6 +43,7 @@
                     font-family: $font-sans-serif;
                     font-size: 1.3rem;
                     margin-bottom: 0.5*$padding;
+                    text-align: center;
                 }
             }
         }
@@ -67,7 +69,6 @@
     }
     
     .project_banner{
-
 
         #orange_blur_point{
             top: -60px;

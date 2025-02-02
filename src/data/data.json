@@ -4,10 +4,18 @@
       {
         "path":"developpement",
         "titre": "Développement",
-        "categories": ["UX/UI Design", "Vue.js", "React"],
+        "categories": ["Vue.js", "UX/UI Design", "React"],
         "projets": [
           {
+            "id": "spotiflow",
             "titre_projet": "SPOTIFLOW",
+            "description": "SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.",
+            "url": "https://spotiflow.netlify.app/",
+            "images": ["1920.jpg"]
+          },
+          {
+            "id": "rumble",
+            "titre_projet": "RUMBLE",
             "description": "SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.",
             "url": "https://spotiflow.netlify.app/",
             "images": ["1920.jpg"]
@@ -20,6 +28,7 @@
         "categories": ["Sound Design", "5.1", "Composition"],
         "projets": [
           {
+            "id": "film",
             "titre_projet": "FILM",
             "description": "Lorem",
             "url": "https://spotiflow.netlify.app/",
@@ -33,6 +42,7 @@
         "categories": ["Sound Design", "5.1", "Composition"],
         "projets": [
           {
+            "id": "film",
             "titre_projet": "FILM",
             "description": "Lorem",
             "url": "https://spotiflow.netlify.app/",
@@ -46,6 +56,7 @@
         "categories": ["UX/UI Design", "Vue.js", "React"],
         "projets": [
           {
+            "id": "spotiflow",
             "titre_projet": "SPOTIFLOW",
             "description": "SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.",
             "url": "https://spotiflow.netlify.app/",

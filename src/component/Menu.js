@@ -52,9 +52,7 @@ const Menu = () => {
             <div className='menu_list' id='menu_list'>
                 <ul>
                     <li><Link to="/">Accueil</Link> </li>
-                    <li>Développement</li>
-                    <li>Son</li>
-                    <li>Visuel</li>
+                    <li><Link to="/categories_menu">Projets</Link> </li>
        
                 </ul>
             </div>

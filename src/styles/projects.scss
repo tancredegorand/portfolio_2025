@@ -8,6 +8,15 @@
         height: fit-content; 
         display: none;
 
+    div > a > p {
+        transition: opacity 0.3s ease-in-out ;
+    }
+    div > a > p:hover {
+        opacity: 1!important;
+    }
+    
+    
+
         span {
             display: block;
             height: 1px;
