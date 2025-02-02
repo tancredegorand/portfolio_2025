@@ -23,7 +23,10 @@ const Menu_page_item = ({ titre }) => {
     );
 };
 
-const Menu_page = () => {
+
+
+
+const Menu_page = ({ currentSection }) => {
     const menuRef = useRef(null);
     const [startY, setStartY] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
@@ -142,31 +145,41 @@ const Menu_page = () => {
         };
     }, [sections]);
 
+    
+    const renderCarousel = (section, index, isLastItem) => (
+        <React.Fragment key={section.titre}>
+            <Link to={`/${section.path}`}>
+                <div 
+                    className="carrousel" 
+                    ref={carouselRefs.current[index]} 
+                    id={section.path} 
+                >
+                    {Array(12).fill(null).map((_, i) => (
+                        <Menu_page_item key={i} titre={section.titre} />
+                    ))}
+                </div>
+                {!isLastItem && <span className="split2" />}
+            </Link>
+        </React.Fragment>
+    );
+
+    const filteredSections = currentSection 
+        ? sections.filter(section => section.path !== currentSection.path)
+        : sections;
+
     return (
-<div className="menu_page" id="menu_page" ref={menuRef}>
-    <Split1 />
-    {sections.map((section, index) => {
-        return (
-            <React.Fragment key={section.titre}>
-                <Link to={`/${section.path}`}>
-                    <div 
-                        className="carrousel" 
-                        ref={carouselRefs.current[index]} 
-                        id={section.path} 
-                    >
-                        {Array(12).fill(null).map((_, i) => (
-                            <Menu_page_item key={i} titre={section.titre}/>
-                        ))}
-                    </div>
-                    {index < sections.length - 1 && <span className="split2" />}
-                </Link>
-            </React.Fragment>
-        );
-    })}
-    <Split1 />
-</div>
+        <div className="menu_page" ref={menuRef}>
+            <Split1 />
+            {filteredSections.map((section, index) => 
+                renderCarousel(
+                    section, 
+                    index, 
+                    index === filteredSections.length - 1
+                )
+            )}
+            <Split1 />
+        </div>
     );
 };
-
 export default Menu_page;
 

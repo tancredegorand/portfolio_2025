@@ -64,7 +64,7 @@ const ProjectPage = () => {
             <Menu />
             <ProjectBanner section={section}/>
             <Projects section={section}/>
-            <Menu_page/>
+            <Menu_page currentSection={section}/>
             <Footer />
         </div>
     );

@@ -51,8 +51,8 @@
         ]
       }, 
       {
-        "path":"developpement",
-        "titre": "Développement",
+        "path":"Test",
+        "titre": "Test",
         "categories": ["UX/UI Design", "Vue.js", "React"],
         "projets": [
           {
