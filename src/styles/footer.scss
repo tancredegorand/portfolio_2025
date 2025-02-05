@@ -70,6 +70,12 @@
 
 @media (min-width: 1024px) {
 
+    .mail_box{
+        .mail{
+            font-size: 4rem!important;
+        }
+    }
+
     .end-footer{
         flex-direction: row-reverse!important;
         justify-content: space-around!important;

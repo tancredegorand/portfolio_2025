@@ -1,9 +1,6 @@
-import arrow_link from '../svg/arrow_link.svg';
-import imgTest from '../img/img_project/1920.jpg'
+import Btn from "./Btn";
 
 const Project = ({project, titreSection}) => {
-
-
     return (
         <div className='project-card' id={project.id}>
         <div>
@@ -13,15 +10,11 @@ const Project = ({project, titreSection}) => {
             </div>
             <p className='project-card-text'>{project.description}</p>
         </div>
-        <a><button>
-            <span></span>
-            <p>VOIR</p>
-            <img src={arrow_link}/>
-        </button></a>
+        <Btn text="VOIR"/>
         <div className='project-img'>
-            <img src={imgTest}/>
-            <img src={imgTest}/>
-            <img src={imgTest}/>
+            {project.images.map((img, index) => (
+                <img key={index} src={`/img/${img}`} alt={`Project ${index}`} />
+            ))}
         </div>
         </div>
 

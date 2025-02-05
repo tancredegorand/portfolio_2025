@@ -42,7 +42,7 @@ const Menu = () => {
         <div>
             <div className="menu" id='menu_container'>
                 <div>
-                    <a href="#accueil">Accueil</a>
+                    <Link to="/">Accueil</Link>
                 </div>
                 <div className="burger" id="burger">
                     <span></span>

@@ -1,3 +1,4 @@
+
 import pp_img from '../img/pp.jpg'
 import school_svg from '../svg/education.svg'
 import location_svg from '../svg/location.svg'

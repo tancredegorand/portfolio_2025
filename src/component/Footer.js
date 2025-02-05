@@ -1,5 +1,6 @@
+import Btn from './Btn';
+
 import w_plane from '../svg/w_plane.svg'
-import arrow_link from '../svg/arrow_link.svg'
 
 const Footer = () =>{
     return (
@@ -9,18 +10,10 @@ const Footer = () =>{
                 <div className="mail_box">
                     <img className="footer_plane" src={w_plane}/>
                     <p>Lorem ipsum</p>
-                    <p className="mail">tancredegorand@orange.fr</p>
+                    <p className="mail">tancredegorand@gmail.com</p>
                     <div className='footer_btn_section'>
-                        <a><button>
-                            <span></span>
-                            <p>LinkedIn</p>
-                            <img src={arrow_link}/>
-                        </button></a>
-                        <a><button>
-                            <span></span>
-                            <p>Bento</p>
-                            <img src={arrow_link}/>
-                        </button></a>
+                        <Btn text="LinkedIn"/>
+                        <Btn text="Bento"/>
                     </div>
                 </div>
             </div>
