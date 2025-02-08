@@ -6,9 +6,13 @@
 
 
     .project-title{
+        overflow-wrap: break-word;
+        word-break: break-word; 
         h2{
             font-size: 3rem;
-            margin-top: $space;
+            margin-bottom: $space;
+        }
+        p{
             margin-bottom: $space;
         }
     }
@@ -19,7 +23,7 @@
     }
     .project-img{
         flex-direction: column;
-        img{
+        img, video{
             border-radius: 15px;
             width: 100%;
             margin-top: $padding;
@@ -27,14 +31,17 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1224px) {
     .project-card > div {
         display: flex;
         .project-card-text{
-            margin-left: $padding;
+            margin-left: $space;
         }
         .project-title{
+            overflow-wrap: normal;
+            word-break: normal;
             h2{
+                min-width: 450px;
                 font-size: 4rem!important;
             }
 

@@ -8,6 +8,10 @@
         height: fit-content; 
         display: none;
 
+        p{
+            font-family: $font-sans-serif-bold;
+        }
+
     div > a > p {
         transition: opacity 0.3s ease-in-out ;
     }

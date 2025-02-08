@@ -9,44 +9,121 @@
           {
             "id": "spotiflow",
             "titre_projet": "SPOTIFLOW",
+            "date" : "2024",
             "description": "SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.",
             "url": "https://spotiflow.netlify.app/",
-            "images": ["1920.jpg", "1920.jpg", "1920.jpg"]
+            "images": ["spotiflow1.jpg", "spotiflow2.jpg", "spotiflow3.jpg"]
           },
           {
-            "id": "rumble",
-            "titre_projet": "RUMBLE",
-            "description": "SPOTIFLOW est un projet qui s'inspire des sites de streaming musical les plus populaires. Cette plateforme vous permet de rechercher et de filtrer pour découvrir de la musique parmi une large sélection de chansons et d'albums, tout comme vous le feriez sur d'autres plateformes de streaming. Pour cela, le projet repose sur le framework Vue.js afin d'utiliser des composants, des routes, un stockage local et bien plus encore. Le site est construit sur une API alimentée par les données de Spotify, garantissant ainsi l'accès à une vaste sélection de chansons et d'albums.",
-            "url": "https://spotiflow.netlify.app/",
-            "images": ["1920.jpg"]
+            "id": "portfolio_2021",
+            "titre_projet": "2021 PORTFOLIO",
+            "date" : "2021",
+            "description": "En 2021, j’ai conçu et développé de A à Z mon premier portfolio en HTML, CSS et JavaScript. J’ai opté pour un style flat design, une tendance phare à l’époque, caractérisée par des formes épurées et des couleurs vives en aplat, privilégiant ainsi un design minimaliste et moderne. Des effets de parallaxe ont également été intégrés, apportant de la profondeur à l’interface. Ce projet m’a permis de renforcer mes compétences en développement web, mais aussi de découvrir mon propre univers graphique, qui a ensuite évolué et inspiré mon portfolio actuel. ",
+            "url": "",
+            "images": ["portfolio2021_1.jpg", "portfolio2021_2.jpg", "portfolio2021_3.jpg"]
           }
         ]
       },
       {
         "path":"son",
         "titre": "Son",
-        "categories": ["Sound Design", "5.1", "Composition"],
+        "categories": ["Sound Design", "Surround 5.1", "Composition"],
         "projets": [
           {
-            "id": "film",
-            "titre_projet": "FILM",
-            "description": "Lorem",
-            "url": "https://spotiflow.netlify.app/",
-            "images": ["1920.jpg"]
+            "id": "dessins_automne",
+            "titre_projet": "DESSINS D'AUTOMNE",
+            "date" : "2024",
+            "description": "Dessins d’Automne est un court-métrage étudiant réalisé durant la session d’automne 2024 à l’UQAT, au Canada. J’ai eu le plaisir de participer à sa co-écriture et à sa réalisation, mais surtout de composer l’ensemble de la bande sonore. Tout le son a été entièrement enregistré et bruité en studio, puis mixé en 5.1.",
+            "url": "https://www.youtube.com/watch?v=jq85t4sGTNk",
+            "images": ["dessins_automne.jpg"]
+          },
+          {
+            "id": "the_burden_of_truth",
+            "titre_projet": "THE BURDEN OF TRUTH",
+            "date" : "2024",
+            "description": "The Burden of Truth est un title sequence conçu pour un film fictif du même nom, plongeant le spectateur dans un univers cyberpunk sombre et immersif. J’ai co-réalisé cette introduction tout en composant la musique, créant une harmonie entre l’image et le son pour renforcer l’atmosphère du film. Entièrement réalisé de A à Z, grâce à l’utilisation de Blender, FL Studio, DaVinci Resolve et Adobe Premiere Pro.",
+            "url": "https://www.youtube.com/watch?v=JRHGWSD49t0",
+            "images": ["theburdenoftruth1.jpg"],
+            "videos":["theburdenoftruth1.mp4","theburdenoftruth2.mp4"]
+          },
+          {
+            "id": "eroadmontblanc",
+            "titre_projet": "eRoadMontBlanc",
+            "date" : "2024",
+            "description": "eRoadMontBlanc est une initiative visant à décarboner le transport routier grâce à une technologie de route électrique capable d’alimenter des camions. Dans le cadre de ce projet, une carte interactive a été créée par Mathéo Pougalan, avec l'Université Gustave Eiffel, pour illustrer le site d'essais Transpolis et pour présenter l'innovation de manière immersive.  J'ai apporté une dimension sonore à cette expérience en travaillant sur le sound design.",
+            "url": "https://eroad-montblanc.fr/transpolis-site-dessais/",
+            "images": ["eroadmontblanc.jpg"]
+          },
+          {
+            "id": "anomalie",
+            "titre_projet": "ANOMALIE",
+            "date" : "2023",
+            "description": "ANOMALIE est un court-métrage explorant le thème du transhumanisme. Ce court-métrage d'anticipation met en scène une société qui recourt à l'eugénisme. Mes responsabilités ont englobé plusieurs aspects de la production : la prise de son pendant le tournage ; la création de la bande originale ; le montage et le sound Design",
+            "url": "https://www.youtube.com/watch?v=POYjMU0Z7kY",
+            "images": ["anomalie1.jpg", "anomalie2.jpg"]
+          },
+          {
+            "id": "le_langage_des_fleurs",
+            "titre_projet": "LE LANGAGE DES FLEURS",
+            "date" : "2022",
+            "description": "Lors des 48h du Court-Métrage de 803Z, j'ai eu l'opportunité de composer la musique du court-métrage réalisé par Zacharie Pain. Cet événement implique de donner aux participants 48 heures pour concevoir, tourner et monter un court métrage.",
+            "url": "https://www.youtube.com/watch?v=9RIp5vcBQuY",
+            "images": ["le_langage_des_fleurs.jpg"]
           }
         ]
       }, 
       {
-        "path":"visual",
-        "titre": "Visual",
-        "categories": ["Sound Design", "5.1", "Composition"],
+        "path":"visuel",
+        "titre": "Visuel",
+        "categories": ["TouchDesigner", "Blender", "After Effect", "Première Pro"],
         "projets": [
           {
-            "id": "film",
-            "titre_projet": "FILM",
-            "description": "Lorem",
-            "url": "https://spotiflow.netlify.app/",
-            "images": ["1920.jpg"]
+            "id": "rumble",
+            "titre_projet": "RUMBLE",
+            "date" : "2024",
+            "description": "Notre projet immersif avec Eliott Devaux consiste à gérer une ambiance lumineuse sur la musique Rumble de Skrillex et Fred again.. La musique est analysée en direct et influence nos scènes graphiques, projetées à travers un patron pour créer une expérience lumineuse immersive. Notre création numérique a été réalisée par nos soins à l'aide de TouchDesigner, logiciel de programmation visuelle en temps réel dans les locaux de l'UQAT au Canada.",
+            "url": "https://www.youtube.com/watch?v=Q9pbQ-8keDg",
+            "images": ["rumble1.jpg", "rumble2.jpg"],
+            "videos": ["rumble.mov"]
+          },
+          {
+            "id": "insta",
+            "titre_projet": "INSTAGRAM",
+            "date" : "2025",
+            "description": "Depuis 2019, je pratique la photographie. J’explore différents styles de retouche et de montage afin de faire ressortir l’effet recherché. J’expose certains de mes clichés sur mon compte Instagram.",
+            "url": "https://www.instagram.com/tancredegorand/",
+            "images": ["insta.jpg"]
+          },
+          {
+            "id": "super_mario",
+            "titre_projet": "SUPER MARIO BROS",
+            "date" : "2023",
+            "description": "SUPER MARIO BROS, LE FILM - Title Sequence est un motion design créé dans le cadre de notre projet de Post-Production en première année d'école d'ingénieur. Inspirée du style de Saul Bass, cette séquence de 30 secondes s'harmonise avec un contenu audiovisuel de Nintendo.",
+            "url": "https://www.youtube.com/watch?v=JRHGWSD49t0",
+            "images": ["titlemario1.jpg"]
+          },
+          {
+            "id": "startwars_blender",
+            "titre_projet": "STAR WARS",
+            "date" : "2023",
+            "description": "Le projet est une scène 3D réalisée sur Blender, mettant en scène un combat spatial dans l’univers de Star Wars. J’ai modélisé un chasseur X-wing et un chasseur TIE, s’affrontant au cœur d’un champ d’astéroïdes. ",
+            "videos": ["startwars_blender.mp4"]
+          }, 
+          {
+            "id": "doc_ouonck",
+            "titre_projet": "OUONCK DIEBA",
+            "date" : "2023",
+            "description": "Vidéo documentaire de présentation réalisée et montée pour découvrir les initiatives et les projets de l'Association du Comité de Jumelage Fleury-sur-Orne / Ouonck-Dieba.",
+            "url":"https://www.youtube.com/watch?v=btw6jcBlJcI",
+            "videos": ["doc_ouonck.mp4"]
+          },
+          {
+            "id": "socomm",
+            "titre_projet": "SO'COMM",
+            "date" : "2022",
+            "description": "Vidéo corporate réalisée pour SO’COMM, une agence de communication basée à Caen, en France. J’ai réalisé le tournage ainsi que le montage de cette production, mettant en valeur l’expertise et le savoir-faire de l’agence.",
+            "url":"https://www.youtube.com/watch?v=5Kr2P4NJVAs",
+            "images":["socomm1.jpg", "socomm2.jpg", "socomm3.jpg"]
           }
         ]
       }
