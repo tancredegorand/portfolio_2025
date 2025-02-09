@@ -2,7 +2,15 @@
 button{
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
+    background-color: $white-color;
+    padding-left: 17px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    cursor: pointer;
     div {
         position: relative;
         width: 15px;
@@ -21,10 +29,12 @@ button{
         }
     }
    
+
     p {
         margin-left: 8px;
         margin-right: 8px;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
+        color: $black-color;
     }
     img{
         width: 15px;

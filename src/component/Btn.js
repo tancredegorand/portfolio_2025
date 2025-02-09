@@ -10,7 +10,7 @@ const Btn = ({text, url}) => {
                     <span id='span-btn-not-fixed'></span>
                 </div>
                 <p>{text}</p>
-                <img src={arrow_link}/>
+                {/* <img src={arrow_link}/> */}
             </button>
         </a>
     ); 

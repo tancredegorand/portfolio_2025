@@ -1,16 +1,17 @@
-
 import pp_img from '../img/pp.jpg'
 import school_svg from '../svg/education.svg'
 import location_svg from '../svg/location.svg'
 import persona from '../svg/persona.svg'
 
 
+
 const About = () =>{
+
     return (
         <div className="about" id="about">
             <img id="pp" src={pp_img}/>
             <div className='about_text_section'>
-            <h2>Lorem ipsum de fou, trop cool la vie j'aime les chocolats !! Lorem ipsum de fou, trop cool la vie j'aime les chocolats !! </h2>
+            <p className='about-content'>Créateur numérique, passionné par la résolution de problèmes alliant technologie, créativité et analyse, j’évolue entre développement web et audiovisuel pour concevoir des solutions innovantes et esthétiques. </p>
             <div className='personal_infos'>
                     <div>
                         <img src={school_svg}/>

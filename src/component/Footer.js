@@ -12,8 +12,8 @@ const Footer = () =>{
                     <p>Lorem ipsum</p>
                     <p className="mail">tancredegorand@gmail.com</p>
                     <div className='footer_btn_section'>
-                        <Btn text="LinkedIn"/>
-                        <Btn text="Bento"/>
+                        <Btn text="LinkedIn" url="https://www.linkedin.com/in/tancredegorand/"/>
+                        <Btn text="Bento" url="https://bento.me/tancredegorand"/>
                     </div>
                 </div>
             </div>

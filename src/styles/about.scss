@@ -9,9 +9,11 @@
     .about_text_section{
         margin-top: $padding;
         margin-bottom: $padding;
-        h2{
+        .about-content{
             font-size: 2rem;
-            font-family: $font-sans-serif;
+            font-family: $font-sans-serif-medium;
+            line-height: 2.8rem;
+
 
         }
 
@@ -57,7 +59,6 @@
         border: solid 3px $white-color;
     }
 }
-
 
 
 
