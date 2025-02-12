@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.33985ce7.css",
+    "main.js": "/static/js/main.b7fb118f.js",
+    "static/js/488.86da3143.chunk.js": "/static/js/488.86da3143.chunk.js",
+    "static/media/background_black.jpg": "/static/media/background_black.0d80604fe49a3e0e5a8d.jpg",
+    "static/media/Montserrat_Regular_400.ttf": "/static/media/Montserrat_Regular_400.2a2d37bf7680d86811db.ttf",
+    "static/media/Bodoni_72_OS.ttc": "/static/media/Bodoni_72_OS.87e3b152f66e83ede231.ttc",
+    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.50f0257aa1e905f4bfaf.ttf",
+    "static/media/Montserrat-Medium.ttf": "/static/media/Montserrat-Medium.b8c6753baa964ccac1ba.ttf",
+    "static/media/pp.jpg": "/static/media/pp.d6fc5f8e93af18ba2f24.jpg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "static/media/location.svg": "/static/media/location.d027ba98806bd3dc907cb55ff2666a3c.svg",
+    "static/media/persona.svg": "/static/media/persona.4e68b5b73dd31278e333e1e4999e364b.svg",
+    "static/media/w_plane.svg": "/static/media/w_plane.6630354a95f4064ee0a085f90d8d7483.svg",
+    "static/media/arrow.svg": "/static/media/arrow.f9909262e82b14e77205c3836c97edea.svg",
+    "static/media/arrow_link.svg": "/static/media/arrow_link.c3064f3a153c9dfd23d5c511ae27eafb.svg",
+    "static/media/education.svg": "/static/media/education.4398a3eaf7f52f22f35dc3bb9cdd0d58.svg",
+    "main.33985ce7.css.map": "/static/css/main.33985ce7.css.map",
+    "main.b7fb118f.js.map": "/static/js/main.b7fb118f.js.map",
+    "488.86da3143.chunk.js.map": "/static/js/488.86da3143.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.33985ce7.css",
+    "static/js/main.b7fb118f.js"
+  ]
+}

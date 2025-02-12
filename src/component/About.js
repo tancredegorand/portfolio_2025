@@ -11,7 +11,7 @@ const About = () =>{
         <div className="about" id="about">
             <img id="pp" src={pp_img}/>
             <div className='about_text_section'>
-            <p className='about-content'>Créateur numérique, passionné par la résolution de problèmes alliant technologie, créativité et analyse, j’évolue entre développement web et audiovisuel pour concevoir des solutions innovantes et esthétiques. </p>
+            <p className='about-content'>Créateur numérique, passionné par la résolution de problèmes alliant technologie, créativité et analyse, j’évolue entre l'<span className='bold'>UI/UX</span>, le <span className='bold'>développement web</span> et l'<span className='bold'>audiovisuel</span> pour concevoir des solutions innovantes et esthétiques. </p>
             <div className='personal_infos'>
                     <div>
                         <img src={school_svg}/>

@@ -69,6 +69,15 @@
             "description": "Lors des 48h du Court-Métrage de 803Z, j'ai eu l'opportunité de composer la musique du court-métrage réalisé par Zacharie Pain. Cet événement implique de donner aux participants 48 heures pour concevoir, tourner et monter un court métrage.",
             "url": "https://www.youtube.com/watch?v=9RIp5vcBQuY",
             "images": ["le_langage_des_fleurs.jpg"]
+          }, 
+          {
+            "id": "cinetime",
+            "titre_projet": "CINETIME",
+            "date" : "2021/2022",
+            "description": "CinéTime est une revue de presse mensuelle dédiée à l’actualité du cinéma. En duo, nous avons réalisé la direction artistique et l’écriture, en passant par l’enregistrement, le montage et la création d’un générique original.",
+            "url": "https://www.youtube.com/channel/UCjjaRUX0nULqKIfVO-cZjug",
+            "images": ["cinetime1.jpg"], 
+            "videos": ["cinetime.mp4"]
           }
         ]
       }, 
@@ -99,7 +108,7 @@
             "titre_projet": "SUPER MARIO BROS",
             "date" : "2023",
             "description": "SUPER MARIO BROS, LE FILM - Title Sequence est un motion design créé dans le cadre de notre projet de Post-Production en première année d'école d'ingénieur. Inspirée du style de Saul Bass, cette séquence de 30 secondes s'harmonise avec un contenu audiovisuel de Nintendo.",
-            "url": "https://www.youtube.com/watch?v=JRHGWSD49t0",
+            "url": "https://www.youtube.com/watch?v=BjeUVYVaBhQ",
             "images": ["titlemario1.jpg"]
           },
           {
@@ -113,7 +122,7 @@
             "id": "doc_ouonck",
             "titre_projet": "OUONCK DIEBA",
             "date" : "2023",
-            "description": "Vidéo documentaire de présentation réalisée et montée pour découvrir les initiatives et les projets de l'Association du Comité de Jumelage Fleury-sur-Orne / Ouonck-Dieba.",
+            "description": "Vidéo documentaire tournée au Sénégal et montée pour mettre en lumière les initiatives et projets de l’Association du Comité de Jumelage Fleury-sur-Orne / Ouonck-Dieba.",
             "url":"https://www.youtube.com/watch?v=btw6jcBlJcI",
             "videos": ["doc_ouonck.mp4"]
           },

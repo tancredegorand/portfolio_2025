@@ -9,7 +9,7 @@ const Footer = () =>{
             <div className='mail_box_container'>
                 <div className="mail_box">
                     <img className="footer_plane" src={w_plane}/>
-                    <p>Lorem ipsum</p>
+                    <p>Créons ensemble !</p>
                     <p className="mail">tancredegorand@gmail.com</p>
                     <div className='footer_btn_section'>
                         <Btn text="LinkedIn" url="https://www.linkedin.com/in/tancredegorand/"/>

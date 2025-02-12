@@ -11,10 +11,11 @@
         margin-bottom: $padding;
         .about-content{
             font-size: 2rem;
-            font-family: $font-sans-serif-medium;
+            font-family: $font-sans-serif;
             line-height: 2.8rem;
-
-
+            .bold{
+                font-family: $font-sans-serif-bold;
+            }
         }
 
         p{
