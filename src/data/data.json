@@ -108,7 +108,7 @@
             "titre_projet": "SUPER MARIO BROS",
             "date" : "2023",
             "description": "SUPER MARIO BROS, LE FILM - Title Sequence est un motion design créé dans le cadre de notre projet de Post-Production en première année d'école d'ingénieur. Inspirée du style de Saul Bass, cette séquence de 30 secondes s'harmonise avec un contenu audiovisuel de Nintendo.",
-            "url": "https://www.youtube.com/watch?v=BjeUVYVaBhQ",
+            "url": "https://www.youtube.com/watch?vq=BjeUVYVaBhQ",
             "images": ["titlemario1.jpg"]
           },
           {
@@ -137,5 +137,5 @@
         ]
       }
     ]
-  }
+    }
 }

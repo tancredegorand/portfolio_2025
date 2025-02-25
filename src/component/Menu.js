@@ -44,9 +44,13 @@ const Menu = () => {
                 <div>
                     <Link to="/">Accueil</Link>
                 </div>
-                <div className="burger" id="burger">
+                <div className='rightSection'> 
+                  <p className='languageOption'>ENG</p>  
+                  <div className="burger" id="burger">
                     <span></span>
                     <span></span>
+                </div>
+
                 </div>
             </div>
             <div className='menu_list' id='menu_list'>
