@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
+
+import LanguageSwitcher from './LanguageSwitcher';
+
+
 
 
 const Menu = () => {
+
+    const { data, loading } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
   
     useEffect(() => {
@@ -42,10 +49,10 @@ const Menu = () => {
         <div>
             <div className="menu" id='menu_container'>
                 <div>
-                    <Link to="/">Accueil</Link>
+                    <Link to="/">{data.info.header.accueil}</Link>
                 </div>
-                <div className='rightSection'> 
-                  <p className='languageOption'>ENG</p>  
+                <div className='rightSection'>  
+                  <LanguageSwitcher/>
                   <div className="burger" id="burger">
                     <span></span>
                     <span></span>
@@ -55,8 +62,8 @@ const Menu = () => {
             </div>
             <div className='menu_list' id='menu_list'>
                 <ul>
-                    <li><Link to="/">Accueil</Link> </li>
-                    <li><Link to="/categories_menu">Projets</Link> </li>
+                    <li><Link to="/">{data.info.header.accueil}</Link> </li>
+                    <li><Link to="/categories_menu">{data.info.header.projet}</Link> </li>
        
                 </ul>
             </div>

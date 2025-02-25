@@ -1,0 +1,153 @@
+{
+  "info": {
+    "header":{
+       "accueil":"Home",
+       "projet":"Projects"
+    },
+    "about":{
+      "txt":"French digital creator, passionate about problem-solving combining technology, creativity, and analysis, I evolve between UI/UX, web development, and audiovisual to design innovative and aesthetic solutions.",
+      "age":"22 yrs",
+      "inge":"IMAC Engineer"
+    },
+    "footer":{
+      "txt": "Let's collaborate!"
+    },
+    "sections": [
+      {
+        "path": "developpement",
+        "titre": "Development",
+        "categories": ["Vue.js", "UX/UI Design", "React"],
+        "projets": [
+          {
+            "id": "spotiflow",
+            "titre_projet": "SPOTIFLOW",
+            "date": "2024",
+            "description": "SPOTIFLOW is a project inspired by the most popular music streaming sites. This platform allows you to search and filter to discover music from a wide selection of songs and albums, just like on other streaming platforms. The project is based on the Vue.js framework to use components, routes, local storage, and much more. The site is built on an API powered by Spotify's data, ensuring access to a vast selection of songs and albums.",
+            "url": "https://spotiflow.netlify.app/",
+            "images": ["spotiflow1.jpg", "spotiflow2.jpg", "spotiflow3.jpg"]
+          },
+          {
+            "id": "portfolio_2021",
+            "titre_projet": "2021 PORTFOLIO",
+            "date": "2021",
+            "description": "In 2021, I designed and developed my first portfolio from scratch using HTML, CSS, and JavaScript. I chose a flat design style, a major trend at the time, characterized by clean shapes and bright colors, opting for a minimalist and modern design. Parallax effects were also integrated, adding depth to the interface. This project allowed me to enhance my web development skills and discover my own graphic universe, which later evolved and inspired my current portfolio.",
+            "url": "",
+            "images": ["portfolio2021_1.jpg", "portfolio2021_2.jpg", "portfolio2021_3.jpg"]
+          }
+        ]
+      },
+      {
+        "path": "son",
+        "titre": "Sound",
+        "categories": ["Sound Design", "Surround 5.1", "Composition"],
+        "projets": [
+          {
+            "id": "dessins_automne",
+            "titre_projet": "AUTUMN DRAWINGS",
+            "date": "2024",
+            "description": "Autumn Drawings is a student short film made during the fall session of 2024 at UQAT in Canada. I had the pleasure of co-writing and directing it, but especially of composing the entire soundtrack. All the sound was recorded and foleyed in the studio, then mixed in 5.1.",
+            "url": "https://www.youtube.com/watch?v=jq85t4sGTNk",
+            "images": ["dessins_automne.jpg"]
+          },
+          {
+            "id": "the_burden_of_truth",
+            "titre_projet": "THE BURDEN OF TRUTH",
+            "date": "2024",
+            "description": "The Burden of Truth is a title sequence designed for a fictional movie of the same name, immersing the viewer in a dark and immersive cyberpunk universe. I co-directed this introduction while composing the music, creating harmony between the image and the sound to enhance the film's atmosphere. Fully created from A to Z using Blender, FL Studio, DaVinci Resolve, and Adobe Premiere Pro.",
+            "url": "https://www.youtube.com/watch?v=JRHGWSD49t0",
+            "images": ["theburdenoftruth1.jpg"],
+            "videos": ["theburdenoftruth1.mp4", "theburdenoftruth2.mp4"]
+          },
+          {
+            "id": "eroadmontblanc",
+            "titre_projet": "eRoadMontBlanc",
+            "date": "2024",
+            "description": "eRoadMontBlanc is an initiative to decarbonize road transport using an electric road technology capable of powering trucks. As part of this project, an interactive map was created by Mathéo Pougalan, with Gustave Eiffel University, to illustrate the Transpolis test site and present the innovation in an immersive way. I added a sound dimension to this experience by working on the sound design.",
+            "url": "https://eroad-montblanc.fr/transpolis-site-dessais/",
+            "images": ["eroadmontblanc.jpg"]
+          },
+          {
+            "id": "anomalie",
+            "titre_projet": "ANOMALY",
+            "date": "2023",
+            "description": "ANOMALY is a short film exploring the theme of transhumanism. This sci-fi short film depicts a society that resorts to eugenics. My responsibilities included several aspects of the production: sound recording during the shoot; creating the original score; editing, and sound design.",
+            "url": "https://www.youtube.com/watch?v=POYjMU0Z7kY",
+            "images": ["anomalie1.jpg", "anomalie2.jpg"]
+          },
+          {
+            "id": "le_langage_des_fleurs",
+            "titre_projet": "THE LANGUAGE OF FLOWERS",
+            "date": "2022",
+            "description": "During the 48h Short Film event by 803Z, I had the opportunity to compose the music for the short film directed by Zacharie Pain. This event challenges participants to design, shoot, and edit a short film in just 48 hours.",
+            "url": "https://www.youtube.com/watch?v=9RIp5vcBQuY",
+            "images": ["le_langage_des_fleurs.jpg"]
+          },
+          {
+            "id": "cinetime",
+            "titre_projet": "CINETIME",
+            "date": "2021/2022",
+            "description": "CinéTime is a monthly press review dedicated to the latest in cinema news. In a duo, we handled the artistic direction and writing, along with recording, editing, and creating an original opening sequence.",
+            "url": "https://www.youtube.com/channel/UCjjaRUX0nULqKIfVO-cZjug",
+            "images": ["cinetime1.jpg"],
+            "videos": ["cinetime.mp4"]
+          }
+        ]
+      },
+      {
+        "path": "visuel",
+        "titre": "Visual",
+        "categories": ["TouchDesigner", "Blender", "After Effects", "Premiere Pro"],
+        "projets": [
+          {
+            "id": "rumble",
+            "titre_projet": "RUMBLE",
+            "date": "2024",
+            "description": "Our immersive project with Eliott Devaux involves managing the lighting ambiance to the music of Rumble by Skrillex and Fred again.. The music is analyzed live and influences our graphic scenes, projected through a pattern to create an immersive lighting experience. Our digital creation was made using TouchDesigner, a real-time visual programming software, in the UQAT facilities in Canada.",
+            "url": "https://www.youtube.com/watch?v=Q9pbQ-8keDg",
+            "images": ["rumble1.jpg", "rumble2.jpg"],
+            "videos": ["rumble.mov"]
+          },
+          {
+            "id": "insta",
+            "titre_projet": "INSTAGRAM",
+            "date": "2025",
+            "description": "Since 2019, I have been practicing photography. I explore various editing and montage styles to bring out the desired effect. I showcase some of my shots on my Instagram account.",
+            "url": "https://www.instagram.com/tancredegorand/",
+            "images": ["insta.jpg"]
+          },
+          {
+            "id": "super_mario",
+            "titre_projet": "SUPER MARIO BROS",
+            "date": "2023",
+            "description": "SUPER MARIO BROS, THE MOVIE - Title Sequence is a motion design created as part of our post-production project during our first year in engineering school. Inspired by Saul Bass' style, this 30-second sequence harmonizes with Nintendo's audiovisual content.",
+            "url": "https://www.youtube.com/watch?vq=BjeUVYVaBhQ",
+            "images": ["titlemario1.jpg"]
+          },
+          {
+            "id": "startwars_blender",
+            "titre_projet": "STAR WARS",
+            "date": "2023",
+            "description": "The project is a 3D scene created in Blender, depicting a space battle in the Star Wars universe. I modeled an X-wing and a TIE fighter battling in an asteroid field.",
+            "videos": ["startwars_blender.mp4"]
+          },
+          {
+            "id": "doc_ouonck",
+            "titre_projet": "OUONCK DIEBA",
+            "date": "2023",
+            "description": "A documentary video filmed in Senegal and edited to highlight the initiatives and projects of the Fleury-sur-Orne / Ouonck-Dieba Sister Cities Association.",
+            "url": "https://www.youtube.com/watch?v=btw6jcBlJcI",
+            "videos": ["doc_ouonck.mp4"]
+          },
+          {
+            "id": "socomm",
+            "titre_projet": "SO'COMM",
+            "date": "2022",
+            "description": "A corporate video created for SO'COMM, a communications agency based in Caen, France. I handled the shooting and editing of this production, showcasing the agency's expertise and know-how.",
+            "url": "https://www.youtube.com/watch?v=5Kr2P4NJVAs",
+            "images": ["socomm2.jpg", "socomm3.jpg"]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,5 +1,17 @@
 {
-  "fr": {
+  "info": {
+    "header":{
+       "accueil":"Accueil",
+       "projet":"Projets"
+    },
+    "about":{
+      "txt":"Créateur numérique, passionné par la résolution de problèmes alliant technologie, créativité et analyse, j’évolue entre l'UI/UX, le développement web et l'audiovisuel pour concevoir des solutions innovantes et esthétiques.",
+      "age":"22 ans",
+      "inge":"Ingénieur IMAC"
+    },
+     "footer":{
+      "txt": "Créons ensemble !"
+    },
     "sections": [
       {
         "path":"developpement",

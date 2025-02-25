@@ -1,16 +1,13 @@
 import { useLocation } from "react-router-dom";
+import { useLanguage } from '../context/LanguageContext';
 
 import Menu from './Menu';
 import Footer from './Footer';
 import BannerTitle from './BannerTitle';
 import Menu_page from './Menu_page';
-import Projects from './Projects'
+import Projects from './Projects';
 
 import arrow from '../svg/arrow.svg';
-
-import data from '../data/data.json'
-
-
 
 const Category = ({category}) => {
     return(
@@ -24,7 +21,6 @@ const Category = ({category}) => {
 const ProjectBanner = ({section}) => {
     return (
         <div className='project_banner'>
-
             <span className="blur_point" id="orange_blur_point"></span>
             <span className="blur_point" id="blue_blur_point"></span>
 
@@ -51,13 +47,16 @@ const ProjectBanner = ({section}) => {
     ); 
 }; 
 
-
-
-
-const ProjectPage = () => {
+const Project_page = () => {
     const location = useLocation();
-    const path = location.pathname.slice(1)
-    const section = data.fr.sections.find(sec => sec.path === path);
+    const path = location.pathname.slice(1);
+    const { data, loading } = useLanguage();
+    
+    if (loading) {
+        return <div>Chargement...</div>;
+    }
+    
+    const section = data.info.sections.find(sec => sec.path === path);
 
     return (
         <div>
@@ -70,4 +69,4 @@ const ProjectPage = () => {
     );
 };
 
-export default ProjectPage;
+export default Project_page;
