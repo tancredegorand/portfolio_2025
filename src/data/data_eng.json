@@ -99,6 +99,13 @@
         "categories": ["TouchDesigner", "Blender", "After Effects", "Premiere Pro"],
         "projets": [
           {
+            "id": "maraicher_loko",
+            "titre_projet": "MARAICHER LOKO",
+            "date" : "2025",
+            "description": "Brand identity and guidelines created for the fictional rebranding of a Quebec-based farmer. Logo design, business card, mockups, and a comprehensive brand guidelines document.",
+            "images":["mloko2.jpg", "mloko.jpg"]
+          },
+          {
             "id": "rumble",
             "titre_projet": "RUMBLE",
             "date": "2024",

@@ -99,6 +99,13 @@
         "categories": ["TouchDesigner", "Blender", "After Effect", "Première Pro"],
         "projets": [
           {
+            "id": "maraicher_loko",
+            "titre_projet": "MARAICHER LOKO",
+            "date" : "2025",
+            "description": "Création d’une identité de marque et d’un guide de normes dans le cadre du rebranding fictif d’un maraîcher québécois. Conception du logo, de la carte d’affaires, de mockups et d’un guide de normes détaillé.",
+            "images":["mloko2.jpg", "mloko.jpg"]
+          },
+          {
             "id": "rumble",
             "titre_projet": "RUMBLE",
             "date" : "2024",
